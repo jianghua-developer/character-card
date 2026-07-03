@@ -1,0 +1,52 @@
+# ==================== 卡片绘图配置 ====================
+# 画面尺寸与比例
+# cardAspectRatioHeightScale: 4/3
+
+# 颜色配置 (HEX 格式)
+# colorBackground: "#FFFFFF"
+# colorBorder: "#E0E0E0"
+# colorDivider: "#E0E0E0"
+# colorMainPinyin: "#4A4A4A"
+# colorMainCharacter: "#1A1A1A"
+# colorPhrasePinyin: "#767676"
+# colorPhraseText: "#2B2B2B"
+
+# 边界、线条与排版间距
+# pixelsOuterMargin: 20
+# pixelsBorderWidth: 6
+# pixelsDividerWidth: 2
+# pixelsDividerPadding: 40
+
+# 字号比例
+# ratioFontSizeMainCharacter: 0.6
+# ratioFontSizeMainPinyin: 0.12
+# ratioFontSizePhraseText: 0.12
+# ratioFontSizePhrasePinyin: 0.035
+
+# 垂直布局比例
+# ratioPosMainPinyinY: 0.12
+# ratioPosMainGapY: 0.05
+# ratioPosBottomAreaY: 0.8
+# ratioPosPhrasePinyinY: 0.03
+# ratioPosPhraseGapY: 0.01
+# coefficientGridCenterWeight: 0.5
+# ratioCharSpacingOfWidth: 0.1
+
+# 字体配置
+# characterFont: "fonts/FZKTK.TTF"
+# pinyinFont: "fonts/msyh.ttc"
+# defaultCardWidth: 1200
+
+# ==================== PDF 拼版配置 ====================
+# pdfMarginX: 30
+# pdfMarginY: 40
+# cardImageAspectRatio: 0.75
+# cardGridScaleFactor: 0.95
+
+# 裁剪线配置
+# colorTrimLine: "#D0D0D0"
+# widthTrimLine: 0.5
+# dashPatternTrimLine: [4.0, 4.0]
+
+# defaultImageNumsPerPage: 2
+# rotationAngleDegrees: -90

@@ -1,0 +1,24 @@
+[project]
+name = "character-card"
+version = "0.1.0"
+description = "汉字卡片生成工具 - 快速生成汉字学习卡片图片并导出为 PDF"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pillow>=12.3.0",
+    "polars>=1.42.1",
+    "pypinyin>=0.55.0",
+    "pyyaml>=6.0.0",
+    "reportlab>=5.0.0",
+    "typer>=0.26.8",
+]
+license = "MIT"
+license-files = ["LICENSE"]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["test"]
