@@ -212,43 +212,43 @@ character-card/config.yml
 
 配置项使用**小写驼峰**命名格式，与常量名一一对应：
 
-| 配置项（小写驼峰）                     | 对应常量                             | 类型    | 默认值               |
-| ----------------------------- | -------------------------------- | ----- | ----------------- |
-| `cardAspectRatioHeightScale`  | `CARD_ASPECT_RATIO_HEIGHT_SCALE` | float | 4/3               |
-| `colorBackground`             | `COLOR_BACKGROUND`               | str   | "#FFFFFF"         |
-| `colorBorder`                 | `COLOR_BORDER`                   | str   | "#E0E0E0"         |
-| `colorDivider`                | `COLOR_DIVIDER`                  | str   | "#E0E0E0"         |
-| `colorMainPinyin`             | `COLOR_MAIN_PINYIN`              | str   | "#4A4A4A"         |
-| `colorMainCharacter`          | `COLOR_MAIN_CHARACTER`           | str   | "#1A1A1A"         |
-| `colorPhrasePinyin`           | `COLOR_PHRASE_PINYIN`            | str   | "#767676"         |
-| `colorPhraseText`             | `COLOR_PHRASE_TEXT`              | str   | "#2B2B2B"         |
-| `pixelsOuterMargin`           | `PIXELS_OUTER_MARGIN`            | int   | 20                |
-| `pixelsBorderWidth`           | `PIXELS_BORDER_WIDTH`            | int   | 6                 |
-| `pixelsDividerWidth`          | `PIXELS_DIVIDER_WIDTH`           | int   | 2                 |
-| `pixelsDividerPadding`        | `PIXELS_DIVIDER_PADDING`         | int   | 40                |
-| `ratioFontSizeMainCharacter`  | `RATIO_FONT_SIZE_MAIN_CHARACTER` | float | 0.6               |
-| `ratioFontSizeMainPinyin`     | `RATIO_FONT_SIZE_MAIN_PINYIN`    | float | 0.12              |
-| `ratioFontSizePhraseText`     | `RATIO_FONT_SIZE_PHRASE_TEXT`    | float | 0.12              |
-| `ratioFontSizePhrasePinyin`   | `RATIO_FONT_SIZE_PHRASE_PINYIN`  | float | 0.035             |
-| `ratioPosMainPinyinY`         | `RATIO_POS_MAIN_PINYIN_Y`        | float | 0.12              |
-| `ratioPosMainGapY`            | `RATIO_POS_MAIN_GAP_Y`           | float | 0.05              |
-| `ratioPosBottomAreaY`         | `RATIO_POS_BOTTOM_AREA_Y`        | float | 0.8               |
-| `ratioPosPhrasePinyinY`       | `RATIO_POS_PHRASE_PINYIN_Y`      | float | 0.03              |
-| `ratioPosPhraseGapY`          | `RATIO_POS_PHRASE_GAP_Y`         | float | 0.01              |
-| `coefficientGridCenterWeight` | `COEFFICIENT_GRID_CENTER_WEIGHT` | float | 0.5               |
-| `ratioCharSpacingOfWidth`     | `RATIO_CHAR_SPACING_OF_WIDTH`    | float | 0.1               |
-| `characterFont`               | `CHARACTER_FONT`                 | str   | "fonts/FZKTK.TTF" |
-| `pinyinFont`                  | `PINYIN_FONT`                    | str   | "fonts/msyh.ttc"  |
-| `defaultCardWidth`            | `DEFAULT_CARD_WIDTH`             | int   | 1200              |
-| `pdfMarginX`                  | `PDF_MARGIN_X`                   | int   | 30                |
-| `pdfMarginY`                  | `PDF_MARGIN_Y`                   | int   | 40                |
-| `cardImageAspectRatio`        | `CARD_IMAGE_ASPECT_RATIO`        | float | 0.75              |
-| `cardGridScaleFactor`         | `CARD_GRID_SCALE_FACTOR`         | float | 0.95              |
-| `colorTrimLine`               | `COLOR_TRIM_LINE`                | str   | "#D0D0D0"         |
-| `widthTrimLine`               | `WIDTH_TRIM_LINE`                | float | 0.5               |
-| `dashPatternTrimLine`         | `DASH_PATTERN_TRIM_LINE`         | list  | \[4.0, 4.0]       |
-| `defaultImageNumsPerPage`     | `DEFAULT_IMAGE_NUMS_PER_PAGE`    | int   | 2                 |
-| `rotationAngleDegrees`        | `ROTATION_ANGLE_DEGREES`         | int   | -90               |
+| 配置项（小写驼峰）                     | 对应常量                             | 类型    | 默认值               | 说明                                   |
+| ----------------------------- | -------------------------------- | ----- | ----------------- | ------------------------------------ |
+| `cardAspectRatioHeightScale`  | `CARD_ASPECT_RATIO_HEIGHT_SCALE` | float | 4/3               | 卡片高度与宽度的比例（高/宽）                    |
+| `colorBackground`             | `COLOR_BACKGROUND`               | str   | "#FFFFFF"         | 卡片背景颜色                              |
+| `colorBorder`                 | `COLOR_BORDER`                   | str   | "#E0E0E0"         | 卡片外边框颜色                             |
+| `colorDivider`                | `COLOR_DIVIDER`                  | str   | "#E0E0E0"         | 主汉字与词组区域之间的分隔线颜色                   |
+| `colorMainPinyin`             | `COLOR_MAIN_PINYIN`              | str   | "#4A4A4A"         | 主汉字拼音的颜色                            |
+| `colorMainCharacter`          | `COLOR_MAIN_CHARACTER`           | str   | "#1A1A1A"         | 主汉字的颜色                              |
+| `colorPhrasePinyin`           | `COLOR_PHRASE_PINYIN`            | str   | "#767676"         | 词组拼音的颜色                             |
+| `colorPhraseText`             | `COLOR_PHRASE_TEXT`              | str   | "#2B2B2B"         | 词组文字的颜色                             |
+| `pixelsOuterMargin`           | `PIXELS_OUTER_MARGIN`            | int   | 20                | 卡片内容区域与边框之间的外边距（像素）               |
+| `pixelsBorderWidth`           | `PIXELS_BORDER_WIDTH`            | int   | 6                 | 卡片外边框宽度（像素）                        |
+| `pixelsDividerWidth`          | `PIXELS_DIVIDER_WIDTH`           | int   | 2                 | 分隔线宽度（像素）                          |
+| `pixelsDividerPadding`        | `PIXELS_DIVIDER_PADDING`         | int   | 40                | 分隔线与上下内容的间距（像素）                    |
+| `ratioFontSizeMainCharacter`  | `RATIO_FONT_SIZE_MAIN_CHARACTER` | float | 0.6               | 主汉字字体大小占卡片宽度的比例                    |
+| `ratioFontSizeMainPinyin`     | `RATIO_FONT_SIZE_MAIN_PINYIN`    | float | 0.12              | 主汉字拼音字体大小占卡片宽度的比例                 |
+| `ratioFontSizePhraseText`     | `RATIO_FONT_SIZE_PHRASE_TEXT`    | float | 0.12              | 词组文字字体大小占卡片宽度的比例                   |
+| `ratioFontSizePhrasePinyin`   | `RATIO_FONT_SIZE_PHRASE_PINYIN`  | float | 0.035             | 词组拼音字体大小占卡片宽度的比例                   |
+| `ratioPosMainPinyinY`         | `RATIO_POS_MAIN_PINYIN_Y`        | float | 0.12              | 主汉字拼音垂直位置占卡片高度的比例                 |
+| `ratioPosMainGapY`            | `RATIO_POS_MAIN_GAP_Y`           | float | 0.05              | 主汉字拼音与主汉字之间的垂直间距比例               |
+| `ratioPosBottomAreaY`         | `RATIO_POS_BOTTOM_AREA_Y`        | float | 0.8               | 词组区域顶部位置占卡片高度的比例                   |
+| `ratioPosPhrasePinyinY`       | `RATIO_POS_PHRASE_PINYIN_Y`      | float | 0.03              | 词组拼音与词组文字之间的垂直间距比例               |
+| `ratioPosPhraseGapY`          | `RATIO_POS_PHRASE_GAP_Y`         | float | 0.01              | 多个词组之间的垂直间距比例                      |
+| `coefficientGridCenterWeight` | `COEFFICIENT_GRID_CENTER_WEIGHT` | float | 0.5               | 主汉字网格居中权重系数（0-1）                    |
+| `ratioCharSpacingOfWidth`     | `RATIO_CHAR_SPACING_OF_WIDTH`    | float | 0.1               | 多音字拼音之间的字间距占卡片宽度的比例              |
+| `characterFont`               | `CHARACTER_FONT`                 | str   | "fonts/FZKTK.TTF" | 汉字字体文件路径                            |
+| `pinyinFont`                  | `PINYIN_FONT`                    | str   | "fonts/msyh.ttc"  | 拼音字体文件路径                            |
+| `defaultCardWidth`            | `DEFAULT_CARD_WIDTH`             | int   | 1200              | 默认卡片宽度（像素）                         |
+| `pdfMarginX`                  | `PDF_MARGIN_X`                   | int   | 30                | PDF 页面水平边距（点）                        |
+| `pdfMarginY`                  | `PDF_MARGIN_Y`                   | int   | 40                | PDF 页面垂直边距（点）                        |
+| `cardImageAspectRatio`        | `CARD_IMAGE_ASPECT_RATIO`        | float | 0.75              | 卡片图片宽高比（宽/高）                        |
+| `cardGridScaleFactor`         | `CARD_GRID_SCALE_FACTOR`         | float | 0.95              | 卡片在 PDF 网格中的缩放系数                     |
+| `colorTrimLine`               | `COLOR_TRIM_LINE`                | str   | "#D0D0D0"         | 裁剪虚线颜色                              |
+| `widthTrimLine`               | `WIDTH_TRIM_LINE`                | float | 0.5               | 裁剪虚线宽度（点）                          |
+| `dashPatternTrimLine`         | `DASH_PATTERN_TRIM_LINE`         | list  | \[4.0, 4.0]       | 裁剪虚线的虚实间隔模式                        |
+| `defaultImageNumsPerPage`     | `DEFAULT_IMAGE_NUMS_PER_PAGE`    | int   | 2                 | 默认每页 PDF 中的卡片数量                      |
+| `rotationAngleDegrees`        | `ROTATION_ANGLE_DEGREES`         | int   | -90               | 卡片在 PDF 中的旋转角度（度），负数表示逆时针旋转       |
 
 ### 配置示例
 
