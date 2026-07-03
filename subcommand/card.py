@@ -10,6 +10,7 @@ from config.character import (
 )
 from util.card_maker import draw_single_card
 from util.csv import load_configs_from_csv
+from util.path_safety import safe_resolve_path
 from pathlib import Path
 
 
@@ -95,11 +96,15 @@ def _print_chinese_character_config(
 def _process_output_path(
     output_path: Annotated[Path | None, typer.Option("--output", "-o")] = None,
 ) -> Path | None:
-    if output_path and not output_path.exists():
-        output_path.mkdir(parents=True, exist_ok=True)
+    if output_path:
+        resolved_path = safe_resolve_path(output_path)
 
-        if output_path and not output_path.is_dir():
+        if resolved_path.exists() and not resolved_path.is_dir():
             raise typer.BadParameter(f"输出目录不能配置为文件:{output_path}")
+
+        resolved_path.mkdir(parents=True, exist_ok=True)
+
+        return resolved_path
 
     return output_path
 
@@ -187,23 +192,28 @@ def generate(
         int | None, typer.Option("--end", help="CSV 结束行（配合 --config 使用）")
     ] = None,
 ):
+    try:
+        if not chinese_character_configs and config_file is None:
+            console.print("没有找到配置，退出...")
+            raise typer.Exit()
 
-    if not chinese_character_configs and config_file is None:
-        console.print("没有找到配置，退出...")
-        raise typer.Exit()
+        if chinese_character_configs and config_file is not None:
+            raise typer.BadParameter("--character 和 --config 不能同时配置")
 
-    if chinese_character_configs and config_file is not None:
-        raise typer.BadParameter("--character 和 --config 不能同时配置")
-
-    if config_file is not None:
-        _process_config_file(
-            config_file,
-            start_row=start_row,
-            end_row=end_row,
-            width=width,
-            output_path=output_path,
-        )
-    else:
-        _process_chinese_character_configs(
-            chinese_character_configs, width=width, output_path=output_path
-        )
+        if config_file is not None:
+            _process_config_file(
+                config_file,
+                start_row=start_row,
+                end_row=end_row,
+                width=width,
+                output_path=output_path,
+            )
+        else:
+            _process_chinese_character_configs(
+                chinese_character_configs, width=width, output_path=output_path
+            )
+    except typer.Exit:
+        raise
+    except Exception as e:
+        console.print(f"[bold][red]错误: {e}[red][bold]")
+        raise typer.Exit(code=1)
