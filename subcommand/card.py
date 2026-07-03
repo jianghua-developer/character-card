@@ -214,6 +214,8 @@ def generate(
             )
     except typer.Exit:
         raise
+    except typer.BadParameter:
+        raise
     except Exception as e:
         console.print(f"[bold][red]错误: {e}[red][bold]")
         raise typer.Exit(code=1)
